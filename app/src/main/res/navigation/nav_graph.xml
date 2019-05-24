@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+    android:id="@+id/homeFragment"
+    android:name="com.barvius.lab4.HomeFragment"
+    android:label="homeFragment"
+    tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_test_start"
+            app:destination="@id/testFragment" />
+        <action
+            android:id="@+id/action_home_archive"
+            app:destination="@id/viewFragment" />
+    </fragment>
+
+<fragment
+        android:id="@+id/testFragment"
+        android:name="com.barvius.lab4.TestFragment"
+        android:label="testFragment"
+        tools:layout="@layout/fragment_test" >
+    <action
+        android:id="@+id/action_test_archive"
+        app:destination="@id/viewFragment" />
+    <action
+        android:id="@+id/action_test_home"
+        app:destination="@id/homeFragment" />
+</fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.barvius.lab4.ViewFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_view" >
+        <action
+            android:id="@+id/action_arhive_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
