@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dictFragment"
+            app:destination="@id/dictFragment" />
     </fragment>
 
 <fragment
@@ -36,7 +39,7 @@
     <fragment
         android:id="@+id/viewFragment"
         android:name="com.barvius.lab4.ViewFragment"
-        android:label="fragment_third"
+        android:label="fragment_view"
         tools:layout="@layout/fragment_view" >
         <action
             android:id="@+id/action_arhive_home"
@@ -49,6 +52,15 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dictFragment"
+        android:name="com.barvius.lab4.DictFragment"
+        android:label="fragment_dict"
+        tools:layout="@layout/fragment_dict" >
+        <action
+            android:id="@+id/action_dictFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 

@@ -70,6 +70,20 @@ public class LoadURL {
         return items;
     }
 
+    public List<DBItems> getDict() {
+        List<DBItems> items = new ArrayList<>();
+        try {
+            JSONArray tmp = new JSONArray(lt.GET(url, new String[] { "getDict", ""}));
+            for (int i = 0; i < tmp.length(); i++) {
+                JSONObject obj = tmp.getJSONObject(i);
+                items.add(new DBItems(obj.getInt("id"),obj.getString("ru"),obj.getString("en")));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
     public boolean moveToArchive(DBItems items) {
         try {
             return new JSONObject(lt.GET(url,

@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/to_archive"
+            android:id="@+id/to_dict"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Посмотреть архив" />

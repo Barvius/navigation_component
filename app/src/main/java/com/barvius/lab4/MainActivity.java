@@ -12,5 +12,9 @@ public class MainActivity extends AppCompatActivity {
         StatusBarTools.setStatusBarColor(getWindow(),getResources().getColor(R.color.colorPrimaryDark));
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }
 

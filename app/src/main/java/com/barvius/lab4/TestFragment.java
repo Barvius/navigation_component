@@ -8,10 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.navigation.NavController;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
-
-import android.net.Uri;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -37,7 +34,6 @@ public class TestFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             directionTranslate = getArguments().getString("direction");
-//            Toast.makeText(getContext(), directionTranslate, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -49,7 +45,7 @@ public class TestFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Button buttonArchive = (Button) view.findViewById(R.id.to_archive);
+        Button buttonArchive = (Button) view.findViewById(R.id.to_dict);
         buttonArchive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,8 +93,6 @@ public class TestFragment extends Fragment {
 
         TextView text = view.findViewById(R.id.masterText);
         text.setText(getLabelFromDirection(currentAnswer));
-
-//        TTS.getInstance().setTextToSpeech(getLabelFromDirection(currentAnswer));
 
         final Button btmpm = new Button(getContext());
         btmpm.setText(getButtonFromDirection(currentAnswer));

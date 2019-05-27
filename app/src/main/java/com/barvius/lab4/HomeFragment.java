@@ -34,9 +34,6 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-//        if (getArguments() != null) {
-
-//        }
     }
 
     @Override
@@ -71,7 +68,15 @@ public class HomeFragment extends Fragment {
                 builder.create().show();
             }
         });
-        Button buttonArchive = (Button) view.findViewById(R.id.to_archive);
+        Button buttonDict = (Button) view.findViewById(R.id.to_dict);
+        buttonDict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
+                navController.navigate(R.id.action_homeFragment_to_dictFragment);
+            }
+        });
+        Button buttonArchive = (Button) view.findViewById(R.id.to_archive2);
         buttonArchive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
