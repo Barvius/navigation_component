@@ -41,7 +41,7 @@ public class ViewFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
                 navController.navigate(R.id.action_arhive_home);
             }
         });

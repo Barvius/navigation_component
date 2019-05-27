@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
                         dialog.dismiss();
                         Bundle bundle = new Bundle();
                         bundle.putString("direction", list[which]);
-                        NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+                        NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
                         navController.navigate(R.id.action_test_start,bundle);
                     }
                 });
@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         buttonArchive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
                 navController.navigate(R.id.action_home_archive);
             }
         });
@@ -91,15 +91,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        menu.add(0, 2, 0, "Загрузить словарь").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-////                loadDBFromFile();
-//                return true;
-//            }
-//        });
 
-        menu.add(0, 3, 0, "Очистить архив").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
+        menu.add(0, 2, 0, "Очистить архив").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -107,6 +101,18 @@ public class HomeFragment extends Fragment {
                 return true;
             }
         });
+
+        menu.add(0, 3, 0, "Выход").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                ConfigManager.logOut(getContext());
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
+                navController.navigate(R.id.action_homeFragment_to_loginFragment);
+                return true;
+            }
+        });
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 

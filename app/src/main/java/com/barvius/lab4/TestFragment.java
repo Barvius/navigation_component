@@ -37,7 +37,7 @@ public class TestFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             directionTranslate = getArguments().getString("direction");
-            Toast.makeText(getContext(), directionTranslate, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), directionTranslate, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -53,8 +53,7 @@ public class TestFragment extends Fragment {
         buttonArchive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
-                new NavOptions.Builder().setExitAnim(R.anim.fade_out);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
                 navController.navigate(R.id.action_test_archive);
             }
         });
@@ -63,8 +62,7 @@ public class TestFragment extends Fragment {
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
-                new NavOptions.Builder().setExitAnim(R.anim.fade_out);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
                 navController.navigate(R.id.action_test_home);
             }
         });
@@ -77,7 +75,7 @@ public class TestFragment extends Fragment {
             Toast toast = Toast.makeText(getContext(),
                     "Словарь пуст, добавьте слова!", Toast.LENGTH_SHORT);
             toast.show();
-            NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+            NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
             navController.navigate(R.id.action_test_home);
             return;
         }
@@ -85,7 +83,7 @@ public class TestFragment extends Fragment {
             Toast toast = Toast.makeText(getContext(),
                     "Все слова изучены, очистете архив!", Toast.LENGTH_SHORT);
             toast.show();
-            NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+            NavController navController = Navigation.findNavController(getActivity(), R.id.m_fragment);
             navController.navigate(R.id.action_test_home);
             return;
         }
